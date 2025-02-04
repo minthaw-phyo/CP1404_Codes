@@ -19,4 +19,5 @@ def print_asterisks(sequence):
     print('*' * len(sequence))
 
 
-main()
+if __name__ == "__main__":
+    main()

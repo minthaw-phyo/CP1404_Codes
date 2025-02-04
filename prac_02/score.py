@@ -20,7 +20,7 @@ def determine_score(score):
     else:
         return "Bad"
 
-
-main()
+if __name__ == "__main__":
+    main()
 
 
