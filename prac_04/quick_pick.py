@@ -6,6 +6,7 @@ MIN_NUMBER = 1
 MAX_NUMBER = 45
 
 
+
 def generate_quick_pick():
     quick_pick = []
 
