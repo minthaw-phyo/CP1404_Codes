@@ -16,6 +16,7 @@ def main():
     print_income_report(num_months, incomes)
 
 
+
 def print_income_report(num_months, incomes):
     """Print an income report showing monthly and cumulative income."""
     print("\nIncome Report\n-------------")
