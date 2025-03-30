@@ -1,43 +1,5 @@
-BoxLayout:
+<MainWidget>:
     orientation: 'vertical'
-    spacing: 10
-
     BoxLayout:
-        orientation: 'horizontal'
-        size_hint_y: None
-        height: 60
-
-        Button:
-            text: "Clear"
-            on_press: app.clear()
-            background_color: 0.2, 0.2, 0.2, 1
-            color: 1, 1, 1, 1
-            size_hint_x: 0.3
-
-        TextInput:
-            id: input_name
-            text: ""
-            font_size: 20
-
-    BoxLayout:
-        orientation: 'horizontal'
-        size_hint_y: None
-        height: 20
-
-        Button:
-            text: "Greet"
-            on_press: app.greet()
-            background_color: 0.2, 0.2, 0.2, 1
-            color: 1, 1, 1, 1
-            size_hint_x: 0.3
-
-        Label:
-            text: app.greeting_text
-            font_size: 24
-            color: 1, 1, 0, 1  # Yellow
-            canvas.before:
-                Color:
-                    rgba: 0, 0, 0, 1  # Black background
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+        orientation: 'vertical'
+        id: main

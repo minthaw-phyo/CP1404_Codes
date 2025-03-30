@@ -1,24 +1,23 @@
 from kivy.app import App
+from kivy.uix.label import Label
+from kivy.uix.boxlayout import BoxLayout
 from kivy.lang import Builder
-from kivy.properties import StringProperty
-from kivy.core.window import Window
 
-Window.size = (500, 300)
-class GreeterApp(App):
-    greeting_text = StringProperty("")
+# Load the KV file once at the top
+Builder.load_file('dynamic_labels.kv')
 
+class MainWidget(BoxLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.names = ["Alice", "Bob", "Charlie", "Diana"]
+
+        for name in self.names:
+            label = Label(text=name)
+            self.ids.main.add_widget(label)
+
+class DynamicLabelsApp(App):
     def build(self):
-        self.title = "Greeter Program"
-        return Builder.load_file("dynamic_labels.kv")
+        return MainWidget()
 
-    def greet(self):
-        name = self.root.ids.input_name.text
-        self.greeting_text = f"Hello {name}"
-
-    def clear(self):
-        self.root.ids.input_name.text = ""
-        self.greeting_text = ""
-
-
-if __name__ == "__main__":
-    GreeterApp().run()
+if __name__ == '__main__':
+    DynamicLabelsApp().run()
