@@ -1,0 +1,48 @@
+BoxLayout:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 0.8
+
+        TextInput:
+            id: input_number
+            text: "0"
+            font_size: 28
+            multiline: False
+            input_filter: 'float'
+            size_hint_x: 1.7
+
+
+        BoxLayout:
+            orientation: 'vertical'
+
+
+            Button:
+                text: "Up"
+                on_press: app.increase_number()
+
+            Button:
+                text: "Down"
+                on_press: app.decrease_number()
+
+    Button:
+        text: "Convert miles to km"
+        on_press: app.convert()
+        size_hint_y: 0.4
+
+
+    Label:
+        id: output_number
+        text: "0.00"
+        font_size: 32
+        color: 1, 1, 0, 1  # Yellow
+        bold: True
+        halign: 'center'
+        valign: 'middle'
+        size_hint_y: 0.4
+
+
